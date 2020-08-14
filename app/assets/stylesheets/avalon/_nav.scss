@@ -27,13 +27,19 @@
 
   .navbar-toggle {
     @media screen and (max-width: $screen-xs-max) {
-      background: $primaryDark;
+      background: $white; //$primaryDark;
     }
   }
 }
 
+// Added following to create title in header
+.navbar-title {
+	font-family: $sansFontFamily;
+	font-size: 20px;
+	}
+
 .navbar {
-  font-family: $museoSlab;
+  font-family: $sansFontFamily; //$museoSlab;
   font-size: 16px;
 
   ul {
@@ -58,6 +64,7 @@
 .navbar-default {
   @media screen and (max-width: $screen-xs-max) {
     background: $primaryDark;
+
   }
 }
 
@@ -162,17 +169,23 @@
   border-radius: 0px;
   width: 100%;
   text-align: left;
+  background-color: $primaryDark;
 }
 
 .manage-btn:hover {
-  background-color: $yellow!important;
-  color: $primaryDark;
+  background-color: $oclCardinalRed!important;
+  color: $white;
 }
 
 .manage-btn:focus {
-  background-color: $yellow;
-  color: $primaryDark;
+  background-color: $oclCardinalRed;
+  color: $white;
 }
+
+.manage-btn:active {
+  background-color: #810A1C;
+  color: $white;
+  }
 
 .manage-dropdown-menu {
   border: none;

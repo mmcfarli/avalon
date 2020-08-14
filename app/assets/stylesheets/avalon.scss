@@ -49,7 +49,7 @@ main {
 
 h1,
 h2 {
-  font-family: $museoSlab;
+  font-family: $sansFontFamily; // $museoSlab;
 }
 
 tr.active-false td {

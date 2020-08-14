@@ -18,14 +18,20 @@ Unless required by applicable law or agreed to in writing, software distributed
   <footer class="container">
     <div class="separator"></div>
     <ul>
-      <li class="footer-logo">
-        <%= image_tag "AvalonMediaSystem_Logo_A.png", alt: "Avalon Media System - #{t(:release_label)} #{Avalon::VERSION}" %>
-      <li><a href="http://www.avalonmediasystem.org">Avalon Media System Project Website</a> </li>
-      <li><%= link_to "Contact Us", main_app.comments_path %></li>
-    </ul>
+      <li>
+   
+		<%= link_to "Oberlin College Libraries", "https://www.oberlin.edu/library" %> |   
+		   
+      	<%= link_to "Oberlin College & Conservatory", "https://www.oberlin.edu/" %> | 
+    
+        <%= link_to "Contact Us", main_app.comments_path %>
+</li>
+  </ul>
     <div class="release">
       <%=release_text%>
       <%= git_commit_info(" (%s %s [%s])") if Rails.env == 'development' %>
     </div>
+  
   </footer>
 </div>
+

@@ -17,10 +17,13 @@ Unless required by applicable law or agreed to in writing, software distributed
   <div class="container">
     <header class="header-wrapper">
       <div class="header-logo">
+      
         <%= link_to main_app.root_path do %>
-        <%= image_tag "Home.png", class: "img-responvies", alt: "Avalon Media System - #{t(:release_label)} #{Avalon::VERSION}" %>
+        <%= image_tag "ocllogo-smaller.png", class: "img-responsive", alt: "Oberlin College Libraries Logo" %>
         <% end %>
+       
       </div>
+
 
       <% unless current_page?(main_app.root_path) %>
       <div class="header-search">
