@@ -61,9 +61,15 @@ config.webpacker.check_yarn_integrity = false
   # config.force_ssl = true
 
   # Enable logging to both stdout and file, in more compact format
-  config.lograge.enabled = true
-  config.lograge.custom_options = lambda do |event|
-    {:time => event.time}
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  else
+    config.lograge.enabled = true
+    config.lograge.custom_options = lambda do |event|
+      {:time => event.time}
+    end
   end
 
   # Use the lowest log level to ensure availability of diagnostic information
