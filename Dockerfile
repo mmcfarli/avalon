@@ -7,9 +7,7 @@ RUN         echo "deb http://deb.debian.org/debian stretch-backports main" >> /e
             pkg-config \
             zip \
             git \
-            libyaz-dev \
-         && rm -rf /var/lib/apt/lists/* \
-         && apt-get clean
+            libyaz-dev
 
 COPY        Gemfile ./Gemfile
 COPY        Gemfile.lock ./Gemfile.lock
@@ -86,7 +84,7 @@ RUN         dpkg -i /chrome.deb || apt-get install -yf
 
 # Build production gems
 FROM        bundle as bundle-prod
-RUN         bundle install --without development test --with aws production postgres
+RUN         bundle install --without development test --with aws production postgres zoom
 
 
 # Install node modules
