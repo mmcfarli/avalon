@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
   devise_list = [ :database_authenticatable, :invitable, :omniauthable,
                   :recoverable, :rememberable, :trackable, :validatable ]
   devise_list << :registerable if Settings.auth.registerable
-  devise_list << { authentication_keys: [:login] }
+  # devise_list << { authentication_keys: [:login] } unless Settings.auth.configuration[0].provider
+  devise_list <<  { omniauth_providers: [:oktaoauth] } if ENV['OKTA_CLIENT_ID']
 
   devise(*devise_list)
 
